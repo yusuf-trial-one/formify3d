@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formify 3D — About Me</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Formify 3D Home">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00D1B2"/></linearGradient></defs><path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#g)"/><path d="M32 4v56M8 16l24 12 24-12" stroke="white" stroke-opacity=".9" stroke-width="2" fill="none"/></svg>
+      <span>Formify 3D</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    <nav class="site-nav">
+      <a class="active" href="about.html">About Me</a>
+      <a href="products.html">Products</a>
+      <a href="howitworks.html">How It Works</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="btn-pill">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section page">
+    <div class="container narrow">
+      <h1><i class="fa-solid fa-child-reaching"></i> About Me</h1>
+      <p class="lead placeholder">[Write your short story here about starting 3D printing at a young age, your first printer, and what excites you about making.]</p>
+      <p class="placeholder">[Add a few fun facts: favorite filament, fastest print, coolest failure that taught you something.]</p>
+      <div class="feature-split">
+        <img src="https://picsum.photos/seed/formify-about/800/600" alt="Young maker at a 3D printer" />
+        <ul class="list">
+          <li><i class="fa-solid fa-check"></i> Safety‑first, supervised printing</li>
+          <li><i class="fa-solid fa-check"></i> Learning CAD & slicing basics</li>
+          <li><i class="fa-solid fa-check"></i> Iterating designs through prototypes</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Formify 3D</p>
+  </footer>
+</body>
+</html>
