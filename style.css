@@ -1,0 +1,24 @@
+:root{--bg:#F7F8FC;--surface:#FFFFFF;--text:#111827;--muted:#6B7280;--primary:#6C63FF;--accent:#00D1B2;--shadow:0 10px 30px rgba(17,24,39,0.08);--radius:20px}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+.site-header{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(180%) blur(8px);background:rgba(255,255,255,0.8);border-bottom:1px solid #eef0f6;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
+.logo{width:36px;height:36px;display:block}
+.site-nav{display:flex;gap:14px;align-items:center}
+.site-nav a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:12px;font-weight:600}
+.site-nav a:hover{background:rgba(108,99,255,0.1)}
+.site-nav a.active{background:var(--primary);color:white}
+.btn-pill{background:var(--accent);color:#072b26 !important;border-radius:999px}.btn-pill:hover{filter:brightness(0.95)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.3rem;padding:8px;border-radius:12px}.nav-toggle:hover{background:#eef0f6}
+.section{min-height:100vh;display:flex;align-items:center;padding:60px 20px}.section.page{padding-top:80px}
+.container{max-width:1100px;margin:0 auto}
+h1{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3vw,3rem);line-height:1.2;margin:0 0 16px}
+.lead{font-size:1.1rem;color:var(--muted);margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:white;text-decoration:none;padding:12px 18px;border-radius:14px;font-weight:700;box-shadow:var(--shadow);transform:translateY(0);transition:transform .2s ease,filter .2s ease}.btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+.masonry{columns:4 260px;column-gap:16px;content-visibility:auto;contain-intrinsic-size:1px 4000px}
+.gallery-item{break-inside:avoid;display:block;margin:0 0 16px;background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border:1px solid #eef0f6}
+.gallery-item img{width:100%;height:auto;display:block;transition:transform .2s ease}
+.gallery-item:hover img{transform:translateY(-3px)}
+.gallery-item figcaption{padding:10px 12px;font-size:.95rem;color:#374151;background:#ffffff}
+.site-footer{padding:24px 20px;text-align:center;color:#6B7280}
+@media (max-width:680px){.site-nav{position:fixed;inset:64px 16px auto 16px;background:#fff;border:1px solid #eef0f6;border-radius:16px;padding:12px;box-shadow:var(--shadow);display:none;flex-direction:column}.site-nav.open{display:flex}.masonry{columns:2 160px}}
+@media (max-width:480px){.masonry{columns:2 140px}}
