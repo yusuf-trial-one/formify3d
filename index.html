@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formify 3D — 3D Printing by a Young Maker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Formify 3D Home">
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6C63FF"/><stop offset="1" stop-color="#00D1B2"/></linearGradient></defs>
+      <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#g)"/>
+      <path d="M32 4v56M8 16l24 12 24-12" stroke="white" stroke-opacity=".9" stroke-width="2" fill="none"/>
+    </svg>
+    <span>Formify 3D</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  <nav class="site-nav">
+    <a href="about.html">About Me</a>
+    <a href="products.html">Products</a>
+    <a href="howitworks.html">How It Works</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="btn-pill">Contact</a>
+  </nav>
+</header>
+
+<section class="section hero hero-plus">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="pill"><i class="fa-solid fa-bolt"></i> Student-led • Family-safe • PLA/PETG</div>
+      <h1>Ideas → <span class="highlight">Real Things</span></h1>
+      <p class="lead">
+        I’m a 12-year-old maker who loves turning sketches into useful prints: fidgets, household helpers, custom designs, and even
+        protein structures for school projects.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="products.html"><i class="fa-solid fa-cubes-stacked"></i> Explore Products</a>
+        <a class="btn btn-ghost" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Request a Custom</a>
+      </div>
+      <ul class="hero-checks">
+        <li><i class="fa-solid fa-check"></i> Friendly pricing</li>
+        <li><i class="fa-solid fa-check"></i> Quick iterations</li>
+        <li><i class="fa-solid fa-check"></i> School & science friendly</li>
+      </ul>
+      <div class="stats">
+        <div><strong>150+</strong><span>prints made</span></div>
+        <div><strong>4</strong><span>filaments used</span></div>
+        <div><strong>7d/wk</strong><span>curiosity</span></div>
+      </div>
+    </div>
+    <div class="hero-montage" aria-hidden="true">
+      <div class="tile lg"><img src="images/Rocket.jpeg" alt=""></div>
+      <div class="tile sm"><img src="images/infinity_cube.jpeg" alt=""></div>
+      <div class="tile sm"><img src="images/Phone%20holder.jpeg" alt=""></div>
+      <div class="tile md"><img src="images/clicking%20fidget.jpeg" alt=""></div>
+      <div class="tile md"><img src="images/Shark.jpeg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section class="section categories">
+  <div class="container">
+    <h2 class="section-title"><i class="fa-solid fa-grid-2"></i> What I Make</h2>
+    <div class="cat-grid">
+      <a class="cat" href="products.html#fidgets"><i class="fa-solid fa-shuffle"></i><h3>Fidgets</h3><p>Satisfying, sturdy, classroom-friendly.</p><span class="cta">See examples →</span></a>
+      <a class="cat" href="products.html#household"><i class="fa-solid fa-house-chimney"></i><h3>Household Helpers</h3><p>Clips, hooks, organizers & cable guides.</p><span class="cta">Browse →</span></a>
+      <a class="cat" href="products.html#custom"><i class="fa-solid fa-pen-ruler"></i><h3>Custom Designs</h3><p>Bring an idea; I’ll model & print it.</p><span class="cta">Start a request →</span></a>
+      <a class="cat" href="products.html#protein"><i class="fa-solid fa-dna"></i><h3>Protein Structures</h3><p>Educational models for class & clubs.</p><span class="cta">Learn more →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section strip">
+  <div class="container strip-inner">
+    <div class="strip-text">
+      <h2>From sketch to print in 3 simple steps</h2>
+      <p class="muted">Design → Print → Deliver. I’ll keep you updated with photos along the way.</p>
+    </div>
+    <a class="btn" href="howitworks.html"><i class="fa-solid fa-gears"></i> How It Works</a>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="container">
+    <h2 class="section-title"><i class="fa-solid fa-thumbs-up"></i> People Say</h2>
+    <div class="t-grid">
+      <article class="t-card"><p>“Fast response and the fidget is my kid’s new favorite.”</p><span>— Parent, local school</span></article>
+      <article class="t-card"><p>“Printed a protein model for our science fair — huge hit!”</p><span>— Student team</span></article>
+      <article class="t-card"><p>“Tidy cable clip design solved our desk mess.”</p><span>— Home office setup</span></article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><p>© <span id="year"></span> Formify 3D • Built with curiosity</p></footer>
+</body></html>
