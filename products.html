@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formify 3D — Products</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span>Formify 3D</span></a>
+    <nav class="site-nav">
+      <a href="about.html">About Me</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="howitworks.html">How It Works</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main class="section page">
+    <div class="container">
+      <h1><i class="fa-solid fa-cubes"></i> Products</h1>
+      <p>Purchase ready 3D prints or request a custom design. Replace the placeholder Stripe links below with your real payment URLs.</p>
+      <div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+        <article class="card">
+          <h3>3D Printed Fidget</h3>
+          <p>Fun, clicky, classroom-friendly.</p>
+          <strong>£3.50</strong><br>
+          <a class="btn" href="https://buy.stripe.com/REPLACE_FIDGET" target="_blank">Buy with Stripe</a>
+        </article>
+        <article class="card">
+          <h3>Phone Stand</h3>
+          <p>Strong and perfect for video calls.</p>
+          <strong>£6.00</strong><br>
+          <a class="btn" href="https://buy.stripe.com/REPLACE_PHONE" target="_blank">Buy with Stripe</a>
+        </article>
+        <article class="card">
+          <h3>Custom Design Deposit</h3>
+          <p>Pay a deposit and I’ll design your idea.</p>
+          <strong>£5.00</strong><br>
+          <a class="btn" href="https://buy.stripe.com/REPLACE_CUSTOM" target="_blank">Pay Deposit</a>
+        </article>
+        <article class="card">
+          <h3>Protein Model</h3>
+          <p>Educational 3D printed protein structures.</p>
+          <strong>£10.00</strong><br>
+          <a class="btn" href="https://buy.stripe.com/REPLACE_PROTEIN" target="_blank">Buy with Stripe</a>
+        </article>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Formify 3D</p></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
