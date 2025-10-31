@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formify 3D — Creativity Has No Age Limit</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Formify 3D Home">
+        <div class="logo-wrap">
+          <!-- cube logo -->
+          <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="cubeGradient" x1="0" x2="1">
+                <stop offset="0" stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#00D1B2"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#cubeGradient)"/>
+            <path d="M32 4v56M8 16l24 12 24-12" stroke="white" stroke-opacity=".9" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="brand-text">Formify 3D</span>
+        </div>
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn-pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid reveal">
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            Formify 3D — where a <span class="accent">12-year-old maker</span> proves creativity has no age limit.
+          </h1>
+          <p class="hero-sub">
+            Hi, I'm Yusuf. I design and 3D print custom fidgets, useful helpers for around the house,
+            and even scientific protein models. Every item starts as an idea — then becomes something real you can hold.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn-main" href="products.html"><i class="fa-solid fa-cart-shopping"></i> Explore Products</a>
+            <a class="btn-ghost" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Request a Custom</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item"><i class="fa-solid fa-lock"></i> Secure checkout</div>
+            <div class="trust-item"><i class="fa-solid fa-hand-holding-heart"></i> 25% of profit helps liver charities</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card glass">
+            <div class="mini-heading"><i class="fa-solid fa-cubes-stacked"></i> Sample Prints</div>
+            <ul class="sample-list">
+              <li><i class="fa-solid fa-shark"></i> Fidget Shark</li>
+              <li><i class="fa-solid fa-mobile-screen-button"></i> Phone Holder</li>
+              <li><i class="fa-solid fa-dna"></i> Protein Model</li>
+            </ul>
+            <div class="mini-note">Made to order • Printed in the UK</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero-bottom-fade"></div>
+    </section>
+
+    <!-- WHAT I MAKE / CATEGORIES -->
+    <section class="section-pad bg-surface">
+      <div class="container reveal">
+        <h2 class="section-title"><span class="accent">What I Make</span></h2>
+        <p class="section-desc">
+          Every print starts on screen and finishes in my hands. I focus on usefulness, fun, and learning.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-shark"></i></div>
+            <h3>Fidgets</h3>
+            <p>Articulated toys like the Fidget Shark — bendable, stress-relieving, and seriously fun.</p>
+            <a class="card-link" href="products.html#fidgets">Shop fidgets <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Household Helpers</h3>
+            <p>Phone holders, clips, stands and more — small 3D fixes that make everyday life easier.</p>
+            <a class="card-link" href="products.html#household">See helpers <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-dna"></i></div>
+            <h3>Protein Models</h3>
+            <p>Science you can hold. 3D printed protein structures for classrooms and projects.</p>
+            <a class="card-link" href="products.html#protein">View models <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Custom Ideas</h3>
+            <p>Have an idea? I’ll model it, print it, and make it real. Perfect for gifts or school projects.</p>
+            <a class="card-link" href="contact.html">Request custom <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS PREVIEW -->
+    <section class="section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">How it works</h2>
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="step-number">1</div>
+            <h3>Design</h3>
+            <p>You tell me what you want. I sketch it and build the 3D model on screen.</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">2</div>
+            <h3>Print</h3>
+            <p>I 3D print it using high-quality, kid-safe PLA filament.</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">3</div>
+            <h3>Deliver</h3>
+            <p>Your idea turns into a real object you can hold, use, or gift.</p>
+          </div>
+        </div>
+
+        <div class="how-cta">
+          <a class="btn-main" href="howitworks.html"><i class="fa-solid fa-gears"></i> See full process</a>
+          <a class="btn-ghost" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Start a custom order</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI ABOUT STRIP -->
+    <section class="about-strip">
+      <div class="container about-strip-inner reveal">
+        <div class="about-text">
+          <h2 class="about-heading">Who’s behind Formify 3D?</h2>
+          <p>
+            I’m Yusuf, a Year 8 student at Wymondham High School who loves building things.
+            I’m growing this into a real business to help fund my future university studies —
+            and I donate 25% of my profit to charity supporting people with liver disease.
+          </p>
+        </div>
+        <div class="about-action">
+          <a class="btn-outline-light" href="about.html"><i class="fa-solid fa-user"></i> Read my story</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Formify 3D — Created by Yusuf</p>
+      <p class="footer-small">Secure checkout via Stripe • 25% of profit to liver disease charities</p>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // simple reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const onScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      revealEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  </script>
+</body>
+</html>
