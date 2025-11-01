@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — Formify 3D</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Formify 3D Home">
+        <div class="logo-wrap">
+          <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="cubeGradient" x1="0" x2="1">
+                <stop offset="0" stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#00D1B2"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#cubeGradient)"/>
+            <path d="M32 4v56M8 16l24 12 24-12" stroke="white" stroke-opacity=".9" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="brand-text">Formify 3D</span>
+        </div>
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn-pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE INTRO HERO STYLE -->
+    <section class="hero">
+      <div class="container hero-grid reveal">
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            Custom 3D prints you can actually hold.
+          </h1>
+          <p class="hero-sub">
+            Fidgets, useful helpers, science models and more — designed and printed by a 12-year-old maker.
+            Safe PLA filament, made to order, and paid securely with Stripe.
+          </p>
+
+          <div class="trust-row">
+            <div class="trust-item"><i class="fa-solid fa-lock"></i> Secure checkout</div>
+            <div class="trust-item"><i class="fa-solid fa-hand-holding-heart"></i> 25% of profit donated</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card glass">
+            <div class="mini-heading"><i class="fa-solid fa-tags"></i> Categories</div>
+            <ul class="sample-list">
+              <li><a href="#fidgets" class="card-link"><i class="fa-solid fa-shark"></i> Fidgets</a></li>
+              <li><a href="#household" class="card-link"><i class="fa-solid fa-mobile-screen-button"></i> Household Helpers</a></li>
+              <li><a href="#custom" class="card-link"><i class="fa-solid fa-lightbulb"></i> Custom Prints</a></li>
+              <li><a href="#protein" class="card-link"><i class="fa-solid fa-dna"></i> Protein Models</a></li>
+            </ul>
+            <div class="mini-note">Made in the UK • PLA filament</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom-fade"></div>
+    </section>
+
+
+    <!-- FIDGETS SECTION -->
+    <section id="fidgets" class="section-pad bg-surface">
+      <div class="container reveal">
+        <h2 class="section-title"><span class="accent">Fidgets</span></h2>
+        <p class="section-desc">
+          Smooth, bendy, satisfying. Great for focus, stress relief, and just messing about with in class (shh).
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-circle-nodes"></i></div>
+            <h3>3D Printed Fidget</h3>
+            <p>A clicky, holdable fidget printed in PLA. Small, pocketable, and really fun to play with.</p>
+            <p style="color:#fff; font-weight:600; margin:0 0 .75rem 0;">£3.50</p>
+            <a class="btn-main" href="https://buy.stripe.com/4gMdRbb9x4aX6X590Z38402" target="_blank" rel="noopener">
+              <i class="fa-brands fa-cc-stripe"></i> Buy with Stripe
+            </a>
+          </div>
+
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-shark"></i></div>
+            <h3>Fidget Shark</h3>
+            <p>Articulated shark that wiggles and bends. Super tactile. One of the most popular fidgets I make.</p>
+            <p style="color:#fff; font-weight:600; margin:0 0 .75rem 0;">£5.00</p>
+            <a class="btn-main" href="https://buy.stripe.com/3cI7sN2D1azl5T190Z38401" target="_blank" rel="noopener">
+              <i class="fa-brands fa-cc-stripe"></i> Buy with Stripe
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HOUSEHOLD HELPERS SECTION -->
+    <section id="household" class="section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">Household Helpers</h2>
+        <p class="section-desc">
+          Desk stands, clips, holders — simple prints that make everyday life easier.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Phone Holder</h3>
+            <p>Keep your phone upright for homework, video calls or watching videos while eating cereal.</p>
+            <p style="color:#fff; font-weight:600; margin:0 0 .75rem 0;">£6.00</p>
+            <a class="btn-main" href="https://buy.stripe.com/cNi4gBcdB4aXepxa5338400" target="_blank" rel="noopener">
+              <i class="fa-brands fa-cc-stripe"></i> Buy with Stripe
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CUSTOM DESIGNS SECTION -->
+    <section id="custom" class="section-pad bg-surface">
+      <div class="container reveal">
+        <h2 class="section-title"><span class="accent">Custom Designs</span></h2>
+        <p class="section-desc">
+          Got an idea for something 3D printed that doesn't exist yet? Need a gift? School project?  
+          I can model it and print it for you.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Custom Print</h3>
+            <p>We talk about what you want, I design it in 3D, send you a preview, and then print it for you.</p>
+            <p class="mini-note" style="color:var(--text-dim); font-size:.8rem; line-height:1.4; margin:.5rem 0 1rem;">
+              Custom jobs are priced individually based on size and print time.
+            </p>
+            <a class="btn-ghost" href="contact.html">
+              <i class="fa-solid fa-paper-plane"></i> Request a Custom
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROTEIN MODELS SECTION -->
+    <section id="protein" class="section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">Protein Structures</h2>
+        <p class="section-desc">
+          Science models for classrooms, science fairs, biology projects and revision.  
+          3D printed protein structures make molecular biology actually touchable.
+        </p>
+
+        <div class="card-grid">
+          <div class="info-card">
+            <div class="icon-circle"><i class="fa-solid fa-dna"></i></div>
+            <h3>Protein Model</h3>
+            <p>Coming soon: physical models of protein structures — great for teaching and STEM demos.</p>
+            <p class="mini-note" style="color:var(--text-dim); font-size:.8rem; line-height:1.4; margin:.5rem 0 1rem;">
+              Educational use • Classroom safe • PLA filament
+            </p>
+            <a class="btn-ghost" href="contact.html">
+              <i class="fa-solid fa-circle-info"></i> Ask about availability
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Formify 3D — Created by Yusuf</p>
+      <p class="footer-small">Secure checkout via Stripe • 25% of profit to liver disease charities</p>
+    </div>
+  </footer>
+
+  <script>
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const onScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      revealEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  </script>
+
+</body>
+</html>
