@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products • Formify 3D</title>
+  <meta name="description" content="Browse Formify 3D products: fidgets, household helpers and science models. Secure checkout via Stripe." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .products-hero { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 3rem 0 2rem; }
+    .products-hero .title { font-family: Poppins, system-ui, sans-serif; font-size: clamp(1.6rem, 1.8vw + 1rem, 2.1rem); margin: 0 0 .4rem; }
+    .products-hero .subtitle { color: var(--text-dim); margin: 0; }
+    .product-grid { display: grid; gap: 1rem; padding: 2rem 0; }
+    @media (min-width: 720px) { .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (min-width: 1080px) { .product-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+    .product-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 18px 36px rgba(0,0,0,.35); }
+    .product-media { position: relative; background: rgba(255,255,255,.08); aspect-ratio: 4 / 3; }
+    .product-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .product-body { padding: 1rem 1.1rem 1.1rem; display: grid; gap: .5rem; }
+    .product-title { font-weight: 700; font-size: 1.05rem; margin: .2rem 0 .1rem; }
+    .product-desc { color: var(--text-dim); font-size: .95rem; margin: 0 0 .2rem; }
+    .buy-row { display: flex; gap: .6rem; align-items: center; margin-top: .2rem; }
+    .buy-btn { background: linear-gradient(135deg, var(--accent), var(--primary)); color: #0b1220; text-decoration: none; padding: .6rem .85rem; border-radius: 999px; font-weight: 800; display: inline-flex; align-items: center; gap: .45rem; transition: .18s ease transform, .18s ease filter; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+    .buy-btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .section-heading { display: flex; align-items: baseline; gap: .6rem; }
+    .section-heading h2 { margin: 0; }
+    .anchor { color: var(--text-dim); font-size: .85rem; }
+    .note { color: var(--text-dim); font-size: .85rem; margin-top: .8rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand logo-wrap" href="index.html" aria-label="Formify 3D home">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="cubeGradient" x1="0" x2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs>
+          <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#cubeGradient)"/>
+          <path d="M32 4v56M8 16l24 12 24-12" stroke="white" stroke-opacity=".95" stroke-width="2" fill="none"/>
+        </svg>
+        Formify 3D
+      </a>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn-pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="products-hero">
+    <div class="container">
+      <h1 class="title">Products</h1>
+      <p class="subtitle">Fidgets and Household Helpers — printed to order.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- FIDGETS -->
+    <div id="fidgets" class="section-heading" style="margin-top:1rem;">
+      <h2 class="section-title">Fidgets</h2>
+      <a class="anchor" href="#fidgets">#fidgets</a>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="product-media"><img src="images/fidget_star.jpeg" alt="Fidget Star 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Fidget Star</div>
+          <p class="product-desc">A pocket-size star that flips and clicks — perfect for focus and fun.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/6oU9AVb9xgXJ819a5338404" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/joystick.jpeg" alt="Joystick fidget 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Joystick</div>
+          <p class="product-desc">Click, tilt and roll — a satisfying mini joystick for restless thumbs.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/7sY5kF91p7n93KTelj38407" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/infinity_cube.jpeg" alt="Infinity Cube fidget 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Infinity Cube</div>
+          <p class="product-desc">Flip forever — an endlessly foldable cube for focus and relaxation.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/9B67sNgtRazl6X5elj38408" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/passthrough_fidget.jpeg" alt="Cool passthrough fidget 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Cool Passthrough Fidget</div>
+          <p class="product-desc">Hypnotic motion with a smooth ‘pass-through’ feel — super tactile.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/8x2fZjfpN9vha9hb973840a" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/Bee.jpeg" alt="Fidget Bee 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Fidget Bee</div>
+          <p class="product-desc">Buzz-worthy fidget with articulated body segments for a snappy feel.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/fZu14pcdB6j55T1a533840b" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- HOUSEHOLD HELPERS -->
+    <div id="household" class="section-heading" style="margin-top:1rem;">
+      <h2 class="section-title">Household Helpers</h2>
+      <a class="anchor" href="#household">#household</a>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="product-media"><img src="images/Phone%20holder.jpeg" alt="Phone holder 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Phone Holder</div>
+          <p class="product-desc">Sturdy, compact and prints cleanly — keeps your phone hands‑free.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/5kQfZjcdBfTFchp1yx38406" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/Rabbit.jpeg" alt="Rabbit 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Rabbit</div>
+          <p class="product-desc">Cute and clean print — perfect desk buddy or small gift.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/cNi7sN1yX4aX5T14KJ38405" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/Pumpkin.jpeg" alt="Pumpkin 3D print" loading="lazy"></div>
+        <div class="product-body">
+          <div class="product-title">Pumpkin</div>
+          <p class="product-desc">Seasonal classic with crisp layers — great for decoration.</p>
+          <div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/4gM6oJb9x7n94OX3GF38409" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="note">If any photo doesn’t show, just adjust the <code>src</code> to match your exact file name in the <code>images/</code> folder (e.g. <code>Bee.jpeg</code>, <code>Phone holder.jpeg</code>, <code>infinity_cube.jpeg</code>, etc.).</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Formify 3D • Built with curiosity in the UK</p>
+      <p class="footer-small">Secure checkout via Stripe • 25% of profit to liver disease charities</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
