@@ -1,54 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products • Formify 3D</title>
+  <meta name="description" content="Browse 3D printed fidgets and household helpers by Formify 3D." />
+  <link rel="stylesheet" href="style.css" />
 
-Formify 3D
-Home
-About Me
-Products
-How It Works
-Gallery
-Contact
-Explore 3D Prints — Made for Fun, Built to Last.
-Fidgets and household helpers — 3D printed to order in kid-safe PLA. All designs are created and tested by Yusuf, age 13.
-Fidgets
-• stars, cubes & more
-Household Helpers
-• stands & organizers
-Fidgets
-#fidgets
+  <!-- Page-specific styles (matches your current theme) -->
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-soft: #f59e0b;
+      --bg: #020617;
+      --card: #020617;
+      --card-soft: #0b1220;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --text: #f9fafb;
+      --text-dim: #9ca3af;
+      --accent-cyan: #22d3ee;
+      --accent-amber: #fb923c;
+    }
 
-Fidget Star
-A pocket-size star that flips and clicks — perfect for focus and fun.
-Buy with Stripe
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    }
 
-Joystick
-Click, tilt and roll — a satisfying mini joystick for restless thumbs.
-Buy with Stripe
+    /* Top nav */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f97316, #fb7185);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+    .brand-logo span {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid rgba(248, 250, 252, 0.95);
+    }
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      font-size: 0.88rem;
+    }
+    .nav-pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: #e5e7eb;
+      text-decoration: none;
+      background: transparent;
+      transition: all 160ms ease-out;
+    }
+    .nav-pill:hover {
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .nav-pill.active {
+      background: radial-gradient(circle at top left, #fb923c, #f97316);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+      border-color: rgba(248, 250, 252, 0.8);
+    }
 
-Infinity Cube
-Flip forever — an endlessly foldable cube for focus and relaxation.
-Buy with Stripe
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #fb923c 0, #f97316 35%, #ea580c 70%);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 2.75rem 0 2.5rem 0;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero-heading {
+      font-size: clamp(2.2rem, 4vw, 2.7rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+    .hero-sub {
+      font-size: 0.98rem;
+      max-width: 30rem;
+      color: #fffbeb;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tags {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.3rem;
+    }
+    .hero-tag {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(254, 249, 195, 0.6);
+      color: #fefce8;
+      background: rgba(15, 23, 42, 0.18);
+    }
 
-Cool Passthrough Fidget
-Hypnotic motion with a smooth “pass-through” feel — super tactile.
-Buy with Stripe
+    .hero-tabs {
+      display: inline-flex;
+      padding: 0.2rem;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.7));
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.7);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+      margin-top: 0.5rem;
+    }
+    .hero-tab-pill {
+      border-radius: 999px;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border: none;
+      margin: 0;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 150ms ease-out;
+      text-decoration: none;
+    }
+    .hero-tab-pill span {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+    .hero-tab-pill.active {
+      background: radial-gradient(circle at top left, #f97316, #fb923c);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+    }
 
-Fidget Bee
-Buzz-worthy fidget with articulated body segments for a snappy feel.
-Buy with Stripe
+    .hero-side {
+      border-radius: 28px;
+      background: radial-gradient(circle at top left, #111827, #020617 60%);
+      box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      padding: 1.9rem 2rem;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .hero-side-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-side-title {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+    }
+    .hero-side-text {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      max-width: 15rem;
+    }
+    .hero-side-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 25% 15%, #fed7aa, #fb923c 40%, #ea580c 80%);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .hero-side-badge span {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      border: 2px solid rgba(248, 250, 252, 0.96);
+    }
 
-Fidget Shark
-A bendy, flexible shark that swims across your desk when you flex it.
-Buy with Stripe
-Household Helpers
-#household
+    .page-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 3.5rem 1.25rem;
+    }
 
-Phone Holder
-Sturdy, compact and prints cleanly — keeps your phone hands-free.
-Buy with Stripe
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.2rem;
+      gap: 1rem;
+    }
+    .section-header h2 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+    .section-sub {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin: 0.3rem 0 0 0;
+    }
+    .section-link {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
 
-Rabbit
-Cute and clean print — perfect desk buddy or small gift.
-Buy with Stripe
+    .product-section {
+      margin-top: 2.3rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.4rem;
+    }
 
-Pumpkin
-Seasonal pumpkin print with crisp layers — great for decoration.
-Buy with Stripe
+    .product-card {
+      border-radius: 22px;
+      background: radial-gradient(circle at top, #020617, #020617 55%);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .product-media {
+      position: relative;
+      padding-top: 70%;
+      background: radial-gradient(circle at center, #111827, #020617);
+      overflow: hidden;
+    }
+    .product-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: center;
+      transition: transform 160ms ease-out;
+    }
+    .product-card:hover .product-media img {
+      transform: scale(1.03);
+    }
+
+    .product-body {
+      padding: 1rem 1.15rem 1.1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .product-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+      min-height: 2.6em;
+    }
+
+    .buy-row {
+      margin-top: 0.45rem;
+    }
+    .buy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent-amber), #fbbf24);
+      color: #111827;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(248, 250, 252, 0.85);
+      transition: transform 120ms ease-out, box-shadow 120ms ease-out, filter 120ms ease-out;
+    }
+    .buy-btn span.badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(15, 23, 42, 0.92);
+      color: #fef9c3;
+    }
+    .buy-btn:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.95),
+        0 0 0 1px rgba(248, 250, 252, 0.95);
+      filter: brightness(1.02);
+    }
+    .buy-btn:active {
+      transform: translateY(0);
+      box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(248, 250, 252, 0.8);
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-side {
+        max-width: 360px;
+        margin: 0.75rem auto 0;
+      }
+    }
+    @media (max-width: 640px) {
+      .nav-inner { padding-inline: 0.8rem; }
+      .hero-inner { padding-inline: 0.9rem; }
+      .page-main { padding-inline: 0.9rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Site header -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"><span></span></div>
+        <div class="brand-name">Formify 3D</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-pill">Home</a>
+        <a href="about.html" class="nav-pill">About Me</a>
+        <a href="products.html" class="nav-pill active">Products</a>
+        <a href="howitworks.html" class="nav-pill">How It Works</a>
+        <a href="gallery.html" class="nav-pill">Gallery</a>
+        <a href="contact.html" class="nav-pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1 class="hero-heading">Explore 3D Prints — Made for Fun, Built to Last.</h1>
+        <p class="hero-sub">
+          Fidgets and household helpers — 3D printed to order in kid-safe PLA.
+          All designs are created and tested by Yusuf, age 13.
+        </p>
+        <div class="hero-tags">
+          <div class="hero-tag">Hand-finished prints</div>
+          <div class="hero-tag">Classroom & desk-friendly</div>
+        </div>
+        <div class="hero-tabs">
+          <a href="#fidgets" class="hero-tab-pill active">
+            Fidgets
+            <span>stars, cubes &amp; more</span>
+          </a>
+          <a href="#household" class="hero-tab-pill">
+            Household Helpers
+            <span>stands &amp; organizers</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-side-inner">
+          <div class="hero-side-badge"><span></span></div>
+          <div class="hero-side-title">Ready-to-order prints</div>
+          <p class="hero-side-text">
+            Add a fidget for your desk or a helper for your home. Each order is printed on-demand and packed by me.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main class="page-main">
+    <!-- Fidgets -->
+    <section id="fidgets" class="product-section">
+      <div class="section-header">
+        <div>
+          <h2>Fidgets</h2>
+          <p class="section-sub">
+            Articulated toys and desk gadgets — designed to be bendy, clicky and fun.
+          </p>
+        </div>
+        <a href="#household" class="section-link">Jump to Household Helpers ↓</a>
+      </div>
+      <div class="product-grid">
+        <!-- Fidget Star -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/star.jpeg" alt="Fidget Star 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Fidget Star</div>
+            <div class="product-desc">
+              A pocket-size star that flips and clicks — perfect for focus and fun.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/6oU9AVb9xgXJ819a5338404" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Joystick -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/joystick.jpeg" alt="Joystick fidget 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Joystick</div>
+            <div class="product-desc">
+              Click, tilt and roll — a satisfying mini joystick for restless thumbs.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/7sY5kF91p7n93KTelj38407" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Infinity Cube -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/infinity_cube.jpeg" alt="Infinity cube fidget 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Infinity Cube</div>
+            <div class="product-desc">
+              Flip forever — an endlessly foldable cube for focus and relaxation.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/9B67sNgtRazl6X5elj38408" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cool Passthrough Fidget -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Cool passthrough fidget.jpeg" alt="Cool passthrough fidget 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Cool Passthrough Fidget</div>
+            <div class="product-desc">
+              Hypnotic motion with a smooth “pass-through” feel — super tactile.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/8x2fZjfpN9vha9hb973840a" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fidget Bee -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Bee.jpeg" alt="Fidget Bee 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Fidget Bee</div>
+            <div class="product-desc">
+              Buzz-worthy fidget with articulated body segments for a snappy feel.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/fZu14pcdB6j55T1a533840b" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fidget Shark -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Shark.jpeg" alt="Fidget Shark 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Flexi Shark</div>
+            <div class="product-desc">
+              A bendy, flexible shark that swims across your desk when you flex it.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/4gMdRbb9x4aX6X590Z38402" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Household Helpers -->
+    <section id="household" class="product-section">
+      <div class="section-header">
+        <div>
+          <h2>Household Helpers</h2>
+          <p class="section-sub">
+            Phone stands, clips and little organizers that quietly make life easier.
+          </p>
+        </div>
+        <a href="#fidgets" class="section-link">Back to Fidgets ↑</a>
+      </div>
+
+      <div class="product-grid">
+        <!-- Phone Holder -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Phone holder.jpeg" alt="Desk phone holder 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Desk Phone Holder</div>
+            <div class="product-desc">
+              A simple, sturdy phone stand to keep your screen at the perfect angle.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/5kQfZjcdBfTFchp1yx38406" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rabbit -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Rabbit.jpeg" alt="Rabbit 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Rabbit</div>
+            <div class="product-desc">
+              Cute and clean print — perfect desk buddy or small gift.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/cNi7sN1yX4aX5T14KJ38405" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pumpkin -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/Orange_pumpkin.jpeg" alt="Pumpkin 3D print" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-title">Pumpkin</div>
+            <div class="product-desc">
+              Seasonal classic with crisp layers — great for Halloween displays.
+            </div>
+            <div class="buy-row">
+              <a class="buy-btn" href="https://buy.stripe.com/4gM6oJb9x7n94OX3GF38409" target="_blank" rel="noopener">
+                <span class="badge">S</span> Buy with Stripe
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
