@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • Formify 3D</title>
+  <meta name="description" content="Contact Yusuf from Formify 3D for custom 3D prints, fidgets, school projects, and more." />
+
+  <!-- Fonts + Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    main {
+      background: radial-gradient(900px 260px at 0% 0%, rgba(248, 250, 252, 0.18) 0, transparent 55%),
+                  radial-gradient(900px 260px at 100% 0%, rgba(251, 113, 133, 0.22) 0, transparent 55%),
+                  var(--dark);
+      min-height: calc(100vh - 72px);
+    }
+
+    .contact-hero {
+      padding: 3.5rem 0 4.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .contact-eyebrow {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-title {
+      font-family: Poppins, system-ui, sans-serif;
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.8rem;
+    }
+
+    .contact-sub {
+      color: var(--text-dim);
+      max-width: 32rem;
+      margin: 0 0 1.6rem;
+      font-size: 0.98rem;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 0.7rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+    }
+
+    .contact-point i {
+      margin-right: 0.5rem;
+      color: var(--accent);
+    }
+
+    .contact-note {
+      font-size: 0.86rem;
+      color: var(--text-dim);
+      max-width: 30rem;
+    }
+
+    .contact-note strong {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, rgba(254, 215, 170, 0.12), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.16), transparent 55%),
+                  var(--card);
+      border-radius: 1.5rem;
+      padding: 1.7rem 1.6rem 1.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 26px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 0.3rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .contact-card p {
+      margin: 0 0 1.3rem;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .form-input,
+    .form-textarea {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.95rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(148, 163, 184, 0.85);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(251, 113, 133, 0.65);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .form-textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+
+    .btn-main {
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-main i {
+      font-size: 0.9rem;
+    }
+
+    .contact-alt {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .contact-alt a {
+      color: #fbbf24;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-alt a:hover {
+      text-decoration: underline;
+    }
+
+    /* Make Contact tab look active in nav */
+    .site-nav a[href="contact.html"] {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #0b1120;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .contact-card {
+        padding: 1.4rem 1.2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (matches homepage) -->
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand logo-wrap" href="index.html" aria-label="Formify 3D home">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="cubeGradient" x1="0" x2="1">
+              <stop offset="0" stop-color="#F97316" />
+              <stop offset="1" stop-color="#FB7185" />
+            </linearGradient>
+          </defs>
+          <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#cubeGradient)" />
+          <path
+            d="M32 4v56M8 16l24 12 24-12"
+            stroke="white"
+            stroke-opacity=".95"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        Formify 3D
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn-pill">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-dark contact-hero">
+      <div class="container contact-grid">
+        <!-- Left side: copy -->
+        <div>
+          <div class="contact-eyebrow">Contact</div>
+          <h1 class="contact-title">Let’s build your 3D idea together.</h1>
+          <p class="contact-sub">
+            Whether it’s a fidget, a school project, or a small helper for around the house,
+            send me your idea and I’ll see how I can turn it into a real 3D print.
+          </p>
+
+          <div class="contact-points">
+            <div class="contact-point">
+              <i class="fa-solid fa-cube"></i>
+              Custom fidgets, helpers, models and more
+            </div>
+            <div class="contact-point">
+              <i class="fa-solid fa-graduation-cap"></i>
+              Great for school projects, science models and gifts
+            </div>
+            <div class="contact-point">
+              <i class="fa-solid fa-heart"></i>
+              25% of my profit supports liver disease charities
+            </div>
+            <div class="contact-point">
+              <i class="fa-solid fa-location-dot"></i>
+              UK-based • Wymondham High School, Year 8
+            </div>
+          </div>
+
+          <p class="contact-note">
+            <strong>Tip:</strong> Parents and teachers are very welcome to contact me directly.
+            Please include any sizes, colours or deadlines if you already know them.
+          </p>
+        </div>
+
+        <!-- Right side: contact card -->
+        <div class="contact-card">
+          <h2>Send a quick message</h2>
+          <p>
+            This form securely sends your message to my inbox. You’ll also see a short confirmation
+            page when it’s sent.
+          </p>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/mblnazjn"
+            method="POST"
+          >
+            <div class="form-field">
+              <label class="form-label" for="name">Your Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g. Yusuf’s teacher, Yusuf’s parent, Alex"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="email">Your Email</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="message">Your Message</label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                placeholder="Tell me what you’d like me to 3D print, sizes, colours, quantity, and any deadlines."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Hidden extras for Formspree -->
+            <input type="hidden" name="_subject" value="New message from Formify3D website" />
+            <input type="hidden" name="_redirect" value="https://formify3d.com/thanks.html" />
+
+            <div class="contact-actions">
+              <button type="submit" class="btn-main">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send message
+              </button>
+              <p class="contact-alt">
+                Or email directly:
+                <a href="mailto:formify3dprints@gmail.com">formify3dprints@gmail.com</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as homepage) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Formify 3D • Built with curiosity in the UK</p>
+      <p class="footer-small">
+        Secure checkout via Stripe • 25% of profit to liver disease charities
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
