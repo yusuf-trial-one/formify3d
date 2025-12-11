@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me • Formify 3D</title>
+  <meta name="description" content="Learn more about Yusuf Muhammad, the 13-year-old maker behind Formify 3D, his story, and why he donates 25% of profits to liver-disease charities." />
+
+  <!-- Fonts + Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    main {
+      background: var(--dark);
+      min-height: calc(100vh - 72px);
+    }
+
+    .about-hero {
+      position: relative;
+      padding: 3.8rem 0 4.2rem;
+      background:
+        radial-gradient(circle at top left, rgba(254, 215, 170, 0.45), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.6), transparent 60%),
+        linear-gradient(135deg, #fb923c, #fb7185);
+      color: #0f172a;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(900px 260px at 0% 0%, rgba(248, 250, 252, 0.25) 0, transparent 55%),
+        radial-gradient(900px 260px at 100% 0%, rgba(248, 113, 113, 0.32) 0, transparent 55%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .about-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    @media (min-width: 880px) {
+      .about-inner {
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .about-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      color: rgba(15, 23, 42, 0.8);
+      margin-bottom: 0.4rem;
+    }
+
+    .about-title {
+      font-family: Poppins, system-ui, sans-serif;
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.7rem;
+    }
+
+    .about-kicker {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 1.2rem;
+      color: rgba(15, 23, 42, 0.9);
+    }
+
+    .about-text {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 40rem;
+    }
+
+    .about-text p {
+      margin: 0 0 0.9rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-text em {
+      font-style: italic;
+    }
+
+    .about-highlight {
+      font-weight: 700;
+    }
+
+    .about-aside {
+      align-self: stretch;
+    }
+
+    .about-card {
+      height: 100%;
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.5rem 1.7rem;
+      background:
+        radial-gradient(circle at top left, rgba(248, 250, 252, 0.9), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(254, 243, 199, 0.9), transparent 60%),
+        rgba(15, 23, 42, 0.06);
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .about-facts-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(15, 23, 42, 0.7);
+      margin-bottom: 0.2rem;
+    }
+
+    .about-facts-main {
+      font-family: Poppins, system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+      color: #0f172a;
+    }
+
+    .about-facts-sub {
+      font-size: 0.9rem;
+      color: rgba(15, 23, 42, 0.85);
+      margin: 0;
+    }
+
+    .about-facts-grid {
+      display: grid;
+      gap: 0.7rem 1rem;
+    }
+
+    @media (min-width: 540px) {
+      .about-facts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .about-pill {
+      border-radius: 999px;
+      padding: 0.55rem 0.7rem;
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: rgba(15, 23, 42, 0.9);
+    }
+
+    .about-pill i {
+      font-size: 0.85rem;
+      color: #f97316;
+    }
+
+    .about-charity {
+      border-radius: 1.1rem;
+      padding: 0.7rem 0.8rem;
+      background: linear-gradient(135deg, rgba(14, 116, 144, 0.1), rgba(56, 189, 248, 0.16));
+      border: 1px solid rgba(8, 47, 73, 0.28);
+      font-size: 0.86rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      color: rgba(15, 23, 42, 0.9);
+    }
+
+    .about-charity i {
+      color: #0ea5e9;
+      margin-top: 0.1rem;
+    }
+
+    .about-charity strong {
+      font-weight: 700;
+    }
+
+    .about-bottom {
+      padding: 2.6rem 0 3rem;
+      background:
+        radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.98));
+      color: var(--text);
+    }
+
+    .about-bottom-inner {
+      max-width: 46rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-bottom h2 {
+      font-family: Poppins, system-ui, sans-serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .about-bottom p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+    }
+
+    .about-bottom p strong {
+      color: #e5e7eb;
+    }
+
+    /* Make About tab look active in nav */
+    .site-nav a[href="about.html"] {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #0b1120;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (matches other pages) -->
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand logo-wrap" href="index.html" aria-label="Formify 3D home">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="cubeGradient" x1="0" x2="1">
+              <stop offset="0" stop-color="#F97316" />
+              <stop offset="1" stop-color="#FB7185" />
+            </linearGradient>
+          </defs>
+          <path d="M32 4 8 16v32l24 12 24-12V16L32 4z" fill="url(#cubeGradient)" />
+          <path
+            d="M32 4v56M8 16l24 12 24-12"
+            stroke="white"
+            stroke-opacity=".95"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        Formify 3D
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Bright gradient hero -->
+    <section class="about-hero">
+      <div class="container about-inner">
+        <div>
+          <div class="about-eyebrow">About Me</div>
+          <h1 class="about-title">A curious 13-year-old with a 3D printer and a big idea.</h1>
+          <p class="about-kicker">
+            I’m Yusuf — the maker behind Formify 3D, and the person who designed and built this website from scratch.
+          </p>
+          <div class="about-text">
+            <p>
+              <span class="about-highlight">My name is Yusuf Muhammad &mdash; and this entire website was built from scratch by me.</span>
+              Creating a website isn’t easy. It takes patience, dedication and plenty of mistakes, but launching it publicly
+              became one of my biggest achievements.
+            </p>
+            <p>
+              This whole journey started with one simple spark of curiosity.
+              <em>&ldquo;What if I made a 3D printing website? I already have a printer&hellip; so why not turn this into something greater?&rdquo;</em>
+              And that thought changed everything for me.
+            </p>
+            <p>
+              I began searching, learning and experimenting. One day became two. Two became three. And somewhere along the way,
+              the hard work turned into enjoyment &mdash; and curiosity grew into Formify 3D.
+            </p>
+            <p>
+              Outside of 3D printing, I enjoy biking, gaming, reading and discovering new hobbies. And now, this website has become
+              one of my favourite creations &mdash; something I’m proud of and constantly improving.
+            </p>
+          </div>
+        </div>
+
+        <aside class="about-aside">
+          <div class="about-card">
+            <div>
+              <div class="about-facts-title">Quick facts</div>
+              <h2 class="about-facts-main">Who’s behind Formify 3D?</h2>
+              <p class="about-facts-sub">
+                A student, a maker, and someone who loves turning small ideas into real objects you can hold.
+              </p>
+            </div>
+
+            <div class="about-facts-grid">
+              <div class="about-pill">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Age 13 • Wymondham High School, Year 8</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-cube"></i>
+                <span>Designing and 3D-printing fidgets &amp; helpers</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Learning web dev, design and business</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>Also into biking, gaming &amp; reading</span>
+              </div>
+            </div>
+
+            <div class="about-charity">
+              <i class="fa-solid fa-heart"></i>
+              <p>
+                I donate <strong>25% of all profits to liver-disease charities</strong>, a cause that’s very close to me and my family.
+                Being able to help others while doing something I love makes this project even more meaningful.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Dark bottom section with closing line -->
+    <section class="about-bottom">
+      <div class="container about-bottom-inner">
+        <h2>Where this is all going</h2>
+        <p>
+          My goals are bigger than just printing cool objects. I want to learn real skills, grow as a creator, and one day
+          achieve financial freedom &mdash; all while having fun on the journey. <strong>And here&rsquo;s the truth: you are the one
+          who decides whether this dream grows or fades. The choice is yours&hellip;</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Formify 3D • Built with curiosity in the UK</p>
+      <p class="footer-small">
+        Secure checkout via Stripe • 25% of profit to liver disease charities
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
