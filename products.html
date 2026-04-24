@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products • Formify 3D</title>
+  <meta name="description" content="Browse 3D printed fidgets, household helpers and protein models by Formify 3D." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <style>
+    :root{
+      --primary:#ff9b21;
+      --secondary:#ff6a00;
+      --accent:#ff2d95;
+      --bg:#03040a;
+      --panel:#0b1220;
+      --text:#ffffff;
+      --text-dim:rgba(255,255,255,.78);
+      --border:rgba(255,255,255,.1);
+    }
+    *{box-sizing:border-box;-webkit-font-smoothing:antialiased}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    img{max-width:100%;display:block}
+    .container{max-width:1240px;margin:0 auto;padding:0 24px}
+
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(3,4,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav-inner{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand-logo-image{width:clamp(220px,24vw,330px);height:auto}
+    .site-nav{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .site-nav a{text-decoration:none;color:#fff;font-weight:600;font-size:1rem;padding:.9rem 1.65rem;border-radius:999px;border:1.6px solid rgba(255,145,42,.88);background:rgba(0,0,0,.18);transition:transform .16s ease, box-shadow .16s ease}
+    .site-nav a:hover{transform:translateY(-1px)}
+    .site-nav a.active{background:linear-gradient(135deg,#ffb11b 0%, #ff7a1a 42%, #ff2f8b 100%);border-color:transparent;box-shadow:0 18px 34px rgba(0,0,0,.45)}
+
+    .hero{background:radial-gradient(circle at 74% 34%, rgba(255,94,0,.34) 0%, rgba(255,94,0,.12) 22%, transparent 48%),radial-gradient(circle at 100% 0%, rgba(255,45,149,.24) 0%, transparent 42%),linear-gradient(135deg,#ff4f8d 0%, #ff7a1a 42%, #ffb11b 100%);padding:2.9rem 0 2.6rem;border-bottom:1px solid rgba(15,23,42,.85)}
+    .hero-inner{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(330px,1fr);gap:2rem;align-items:center}
+    .hero-heading{font-family:Poppins,system-ui,sans-serif;font-size:clamp(2.25rem, 4vw, 3rem);line-height:1.05;font-weight:900;margin:0 0 .9rem;letter-spacing:.02em}
+    .hero-sub{max-width:34rem;color:#fff7ed;font-size:1rem;margin:0 0 1.3rem}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.25rem}
+    .hero-tag{padding:.32rem .72rem;border-radius:999px;border:1px solid rgba(255,255,255,.38);background:rgba(15,23,42,.16);color:#fffaf0;font-size:.8rem;font-weight:600}
+    .hero-tabs{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.35rem}
+    .hero-tab-pill{border:none;cursor:pointer;padding:.78rem 1.15rem;border-radius:999px;background:rgba(10,12,18,.42);border:1px solid rgba(255,255,255,.32);color:#fff;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:.55rem;transition:transform .16s ease, box-shadow .16s ease, background .16s ease}
+    .hero-tab-pill:hover{transform:translateY(-1px)}
+    .hero-tab-pill.active{background:linear-gradient(135deg,#ffb11b 0%, #ff7a1a 42%, #ff2f8b 100%);color:#111827;box-shadow:0 16px 34px rgba(0,0,0,.35);border-color:transparent}
+
+    .hero-side{border-radius:30px;background:radial-gradient(circle at 78% 30%, rgba(255,106,0,.28) 0%, rgba(255,106,0,.12) 18%, transparent 48%),linear-gradient(145deg, rgba(9,11,17,.98), rgba(6,8,14,.98));border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 48px rgba(0,0,0,.45);padding:1.5rem 1.5rem 1.2rem;min-height:260px;display:flex;flex-direction:column;justify-content:center;text-align:center;overflow:hidden;position:relative}
+    .hero-side::after{content:"";position:absolute;inset:16% 12% 12% 12%;background:radial-gradient(circle at center, rgba(255,108,24,.24) 0%, transparent 65%);filter:blur(24px);pointer-events:none}
+    .hero-side-inner{position:relative;z-index:1}
+    .hero-side-title{font-size:1.08rem;font-weight:800;margin:0 0 .55rem}
+    .hero-side-text{color:var(--text-dim);font-size:.88rem;margin:0 auto .9rem;max-width:16rem}
+    .hero-side-logo{width:min(100%, 220px);margin:0 auto;border-radius:18px}
+
+    .page-main{max-width:1240px;margin:0 auto;padding:2.25rem 24px 3.8rem}
+    .section-header{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+    .section-header h2{font-family:Poppins,system-ui,sans-serif;font-size:1.55rem;margin:0}
+    .section-sub{color:var(--text-dim);margin:.28rem 0 0;font-size:.95rem}
+    .product-section{display:none}
+    .product-section.active{display:block}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+    .product-card{background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(15,23,42,.82));border-radius:24px;border:1px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+    .product-media{position:relative;aspect-ratio:4/3;background:#020617;overflow:hidden}
+    .product-media img{width:100%;height:100%;object-fit:cover;transition:transform .18s ease}
+    .product-card:hover .product-media img{transform:scale(1.03)}
+    .product-body{padding:1rem 1.05rem 1.15rem;display:grid;gap:.5rem;height:100%}
+    .product-title{font-weight:800;font-size:1rem}
+    .product-desc{color:var(--text-dim);font-size:.9rem;margin:0}
+    .buy-row{margin-top:.3rem}
+    .buy-btn,.info-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.62rem 1rem;border-radius:999px;text-decoration:none;font-size:.88rem;font-weight:800;box-shadow:0 14px 28px rgba(0,0,0,.28)}
+    .buy-btn{background:linear-gradient(135deg,#ffb11b 0%, #ff7a1a 42%, #ff2f8b 100%);color:#111827}
+    .info-btn{background:rgba(0,0,0,.18);color:#fff;border:1px solid rgba(255,145,42,.9)}
+    .protein-icon-panel{aspect-ratio:4/3;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,.06), transparent 50%),linear-gradient(145deg,#111827,#020617 60%);color:#ffb11b;font-size:4rem}
+    .helper-note{margin-top:1rem;color:rgba(255,255,255,.72);font-size:.84rem}
+
+    @media(max-width:980px){.hero-inner{grid-template-columns:1fr}}
+    @media(max-width:760px){.site-nav{gap:.65rem}.site-nav a{padding:.75rem 1.15rem;font-size:.92rem}}
+    @media(max-width:640px){.container,.page-main{padding-left:18px;padding-right:18px}.nav-inner{flex-direction:column;align-items:flex-start;padding-top:.85rem;padding-bottom:.85rem}.site-nav{justify-content:flex-start}.brand-logo-image{width:min(230px,62vw)}.hero-tabs{flex-direction:column;align-items:stretch}.hero-tab-pill{justify-content:center}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Formify 3D home">
+        <img class="brand-logo-image" src="logo.png" alt="Formify 3D">
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="howitworks.html">How It Works</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1 class="hero-heading">Explore 3D Prints — Made for Fun, Built to Last.</h1>
+        <p class="hero-sub">
+          Fidgets, household helpers and protein models — 3D printed to order in kid-safe PLA.
+          Designed carefully and made to feel special.
+        </p>
+
+        <div class="hero-tags">
+          <div class="hero-tag">Ready to order</div>
+          <div class="hero-tag">Printed with care</div>
+          <div class="hero-tag">Custom requests welcome</div>
+        </div>
+
+        <div class="hero-tabs" role="tablist" aria-label="Product categories">
+          <button class="hero-tab-pill active" data-target="fidgets" type="button"><i class="fa-solid fa-puzzle-piece"></i> Fidgets</button>
+          <button class="hero-tab-pill" data-target="household" type="button"><i class="fa-solid fa-house-chimney"></i> Household Helpers</button>
+          <button class="hero-tab-pill" data-target="protein" type="button"><i class="fa-solid fa-dna"></i> Protein Models</button>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-side-inner">
+          <h2 class="hero-side-title">Ready to Order Prints</h2>
+          <p class="hero-side-text">
+            Browse the sections and switch between categories instantly without scrolling down the page.
+          </p>
+          <img class="hero-side-logo" src="images/small-logo.png" alt="Formify 3D logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-main">
+    <section id="fidgets" class="product-section active">
+      <div class="section-header">
+        <div><h2>Fidgets</h2><p class="section-sub">Articulated toys and desk gadgets — designed to be bendy, clicky and fun.</p></div>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-media"><img src="images/star.jpeg" alt="Fidget Star 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Fidget Star</div><p class="product-desc">A pocket-size star that flips and clicks — perfect for focus and fun.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/6oU9AVb9xgXJ819a5338404" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/joystick.jpeg" alt="Joystick fidget 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Joystick</div><p class="product-desc">Click, tilt and roll — a satisfying mini joystick for restless thumbs.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/7sY5kF91p7n93KTelj38407" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/infinity_cube.jpeg" alt="Infinity cube fidget 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Infinity Cube</div><p class="product-desc">Flip forever — an endlessly foldable cube for focus and relaxation.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/9B67sNgtRazl6X5elj38408" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/Cool passthrough fidget.jpeg" alt="Cool passthrough fidget 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Cool Passthrough Fidget</div><p class="product-desc">Hypnotic motion with a smooth pass-through feel — super tactile.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/8x2fZjfpN9vha9hb973840a" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/Bee.jpeg" alt="Fidget Bee 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Fidget Bee</div><p class="product-desc">Buzz-worthy fidget with articulated body segments for a snappy feel.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/fZu14pcdB6j55T1a533840b" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/Shark.jpeg" alt="Flexi Shark 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Flexi Shark</div><p class="product-desc">A bendy, flexible shark that swims across your desk when you flex it.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/4gMdRbb9x4aX6X590Z38402" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="household" class="product-section">
+      <div class="section-header">
+        <div><h2>Household Helpers</h2><p class="section-sub">Phone stands, clips and little organisers that quietly make life easier.</p></div>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-media"><img src="images/Phone holder.jpeg" alt="Desk phone holder 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Desk Phone Holder</div><p class="product-desc">A simple, sturdy phone stand to keep your screen at the perfect angle.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/5kQfZjcdBfTFchp1yx38406" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/Rabbit.jpeg" alt="Rabbit 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Rabbit</div><p class="product-desc">Cute and clean print — perfect desk buddy or small gift.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/cNi7sN1yX4aX5T14KJ38405" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+        <article class="product-card"><div class="product-media"><img src="images/Orange_pumpkin.jpeg" alt="Pumpkin 3D print" loading="lazy"></div><div class="product-body"><div class="product-title">Pumpkin</div><p class="product-desc">Seasonal classic with crisp layers — great for Halloween displays.</p><div class="buy-row"><a class="buy-btn" href="https://buy.stripe.com/4gM6oJb9x7n94OX3GF38409" target="_blank" rel="noopener"><i class="fa-brands fa-stripe-s"></i> Buy with Stripe</a></div></div></article>
+      </div>
+    </section>
+
+    <section id="protein" class="product-section">
+      <div class="section-header">
+        <div><h2>Protein Models</h2><p class="section-sub">Science you can hold — ideal for classrooms, displays and custom school projects.</p></div>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><div class="protein-icon-panel"><i class="fa-solid fa-dna"></i></div><div class="product-body"><div class="product-title">Alpha Helix Model</div><p class="product-desc">A clean 3D printed helix model that helps explain structure quickly and visually.</p><div class="buy-row"><a class="info-btn" href="contact.html"><i class="fa-regular fa-envelope"></i> Ask About This</a></div></div></article>
+        <article class="product-card"><div class="protein-icon-panel"><i class="fa-solid fa-microscope"></i></div><div class="product-body"><div class="product-title">Folded Protein Display</div><p class="product-desc">A more detailed showpiece model for science fairs, revision and classroom demos.</p><div class="buy-row"><a class="info-btn" href="contact.html"><i class="fa-regular fa-envelope"></i> Ask About This</a></div></div></article>
+        <article class="product-card"><div class="protein-icon-panel"><i class="fa-solid fa-cubes-stacked"></i></div><div class="product-body"><div class="product-title">Custom Protein Model</div><p class="product-desc">Need a specific protein or science model printed? Send the idea and I can make it with you.</p><div class="buy-row"><a class="info-btn" href="contact.html"><i class="fa-regular fa-envelope"></i> Request Custom</a></div></div></article>
+      </div>
+      <p class="helper-note">Protein models are usually made to order, so the contact page is the best place to ask for one.</p>
+    </section>
+  </main>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.hero-tab-pill');
+    const sections = document.querySelectorAll('.product-section');
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.target;
+        tabButtons.forEach((btn) => btn.classList.remove('active'));
+        sections.forEach((section) => section.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+<!-- refresh -->
