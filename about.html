@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Formify3D</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#02040b;
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:#000;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo img{
+    width:260px;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    padding:14px 28px;
+    border:2px solid #ff8a1c;
+    border-radius:999px;
+    font-weight:600;
+    transition:0.25s;
+}
+
+nav a:hover,
+nav a.active{
+    background:linear-gradient(135deg,#ffb11f,#ff6a2a,#ff2f8c);
+    border-color:transparent;
+}
+
+.about-section{
+    max-width:1400px;
+    margin:auto;
+    padding:90px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:80px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h1{
+    font-size:78px;
+    margin-bottom:40px;
+}
+
+.about-text p{
+    font-size:24px;
+    line-height:1.8;
+    color:rgba(255,255,255,0.82);
+    margin-bottom:34px;
+}
+
+.about-card{
+    width:420px;
+    background:#081330;
+    border-radius:28px;
+    padding:28px;
+    border:1px solid rgba(255,255,255,0.06);
+    text-align:center;
+}
+
+.about-card img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:30px;
+}
+
+.about-card h2{
+    font-size:30px;
+    margin-bottom:22px;
+}
+
+.about-card p{
+    font-size:18px;
+    line-height:1.8;
+    color:rgba(255,255,255,0.82);
+}
+
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:rgba(255,255,255,0.65);
+    margin-top:40px;
+}
+
+@media(max-width:1000px){
+
+    .about-section{
+        flex-direction:column;
+        padding:60px 30px;
+    }
+
+    .about-text h1{
+        font-size:52px;
+    }
+
+    .about-card{
+        width:100%;
+    }
+
+    header{
+        flex-direction:column;
+        gap:24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" alt="Formify3D Logo">
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About Me</a>
+<a href="products.html">Products</a>
+<a href="howitworks.html">How It Works</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="about-section">
+
+<div class="about-text">
+
+<h1>About Formify 3D</h1>
+
+<p>
+Hi, I'm Yusuf — the creator behind Formify 3D. I design and print creative 3D models including fidgets, custom decorations, household helpers and fun articulated prints.
+</p>
+
+<p>
+I started Formify 3D to turn ideas into real products while learning design, business and creativity through 3D printing.
+</p>
+
+<p>
+Every print is carefully made using quality PLA filament and tested to make sure it looks great and feels satisfying to use.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<img src="logo.png" alt="Formify 3D Logo">
+
+<h2>Formify 3D</h2>
+
+<p>
+Creative 3D prints designed with care — from colourful fidgets to custom display pieces and useful everyday helpers.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Formify 3D
+</footer>
+
+</body>
+</html>
